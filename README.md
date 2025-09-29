@@ -20,12 +20,18 @@ Tecnologias Utilizadas
 Estrutura do Projeto
 
 com.petapi
-├── controller         # Controladores REST
-├── service            # Regras de negócio
-├── model              # Entidades e DTOs
-├── repository         # Interfaces de acesso a dados
-├── client             # Integração externa (PositionStack)
-└── ApiLocalizacaoPetApplication.java
+
+.controller   ------  Controladores REST
+
+.service    --------  Regras de negócio
+
+.model      --------  Entidades e DTOs
+
+.repository  -------  Interfaces de acesso a dados
+
+.client     -------   Integração externa (PositionStack)
+
+.ApiLocalizacaoPetApplication.java
 
 
 ---
@@ -82,7 +88,7 @@ Pré-requisitos:
 
 - Java 17
 - Maven
-- IDE (Eclipse, STS ou IntelliJ)
+- IDE ( STS )
 
 Passos:
 
