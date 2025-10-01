@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "41c24760-160a-4019-9ad9-fdc315de0921",
+		"name": "PetAPI - Localização (Exemplos variados)",
+		"description": "Coleção com múltiplos testes de localização de pets perdidos.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46779929"
+	},
+	"item": [
+		{
+			"name": "Registrar Pet - Centro SP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sensorId\": \"PET-001\",\n  \"latitude\": -23.55052,\n  \"longitude\": -46.633308,\n  \"dataHora\": \"2025-07-21T10:00:00\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/localizacao",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"localizacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Pet - RJ Copacabana",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sensorId\": \"PET-002\",\n  \"latitude\": -22.971964,\n  \"longitude\": -43.182553,\n  \"dataHora\": \"2025-07-21T11:30:00\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/localizacao",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"localizacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Pet - Porto Alegre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sensorId\": \"PET-003\",\n  \"latitude\": -30.034647,\n  \"longitude\": -51.217658,\n  \"dataHora\": \"2025-07-21T13:45:00\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/localizacao",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"localizacao"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
