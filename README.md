@@ -104,13 +104,155 @@ mvn spring-boot:run
 
 Endpoints REST
 
-| Método | Endpoint                   | Descrição                         |
-|--------|----------------------------|-----------------------------------|
-| POST   | `/api/localizacao`         | Registra nova localização         |
-| GET    | `/api/localizacao`         | Lista todas as localizações       |
-| GET    | `/api/localizacao/{id}`    | Busca localização por ID          |
-| DELETE | `/api/localizacao/{id}`    | Remove localização por ID         |
+# Endpoints
+                    
+## | POST   -->  /api/localizacao         -->     Registra nova localização  
 
+### Request
+
+Na requisição POST utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
+
+```json
+{
+  "sensorId": "PET-002",
+  "latitude": -22.971964,
+  "longitude": -22.971964,,
+  "dataHora": "2025-07-21T11:30:00"
+}
+```
+
+|Campo	   |     Tipo	       |          Descrição	                                           |          Exemplo     |
+|----------|-----------------|---------------------------------------------------------------|-----------------     |
+|sensorId  |	 String        |	Identificador único do sensor ou dispositivo de rastreamento | "sensor-abc-123"     |
+|latitude  | double          |	Coordenada geográfica de latitude                            |       -22.971964     |
+|longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
+|dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
+
+### Response 
+
+O response devolve o objeto cadastrado.
+
+```json
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    }
+```
+
+## | GET    -->  /api/localizacao         -->     Lista todas as localizações 
+
+### Request
+
+Na requisição GET utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
+
+```json
+{
+  "sensorId": "PET-002",
+  "latitude": -22.971964,
+  "longitude": -22.971964,,
+  "dataHora": "2025-07-21T11:30:00"
+}
+```
+
+|Campo	   |     Tipo	       |          Descrição	                                           |          Exemplo     |
+|----------|-----------------|---------------------------------------------------------------|-----------------     |
+|sensorId  |	 String        |	Identificador único do sensor ou dispositivo de rastreamento | "sensor-abc-123"     |
+|latitude  | double          |	Coordenada geográfica de latitude                            |       -22.971964     |
+|longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
+|dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
+
+### Response 
+
+O response devolve uma lista com os objetos cadastrados no endpoint de POST
+
+```json
+[
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    },
+    {
+        "id": 2,
+        "sensorId": "PET-002",
+        "latitude": -22.971964,
+        "longitude": -43.182553,
+        "dataHora": "2025-07-21T11:30:00",
+        "pais": "Brazil",
+        "estado": "Rio De Janeiro",
+        "cidade": "Rio de Janeiro",
+        "bairro": "Copacabana",
+        "endereco": "Avenida Atlantica 0, Rio de Janeiro, Brazil"
+    },
+    {
+        "id": 3,
+        "sensorId": "PET-001",
+        "latitude": -23.55052,
+        "longitude": -46.633308,
+        "dataHora": "2025-07-21T10:00:00",
+        "pais": "Brazil",
+        "estado": "Sao Paulo",
+        "cidade": "São Paulo",
+        "bairro": "Se",
+        "endereco": "Sé, São Paulo, Brazil"
+    }
+]
+```
+
+## | GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID
+
+### Request
+
+Na requisição GET por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
+
+**{{baseURL}}/api/localizacao/1**
+
+### Response 
+
+O response devolve um Objeto com a requisição do Id que foi passado.
+
+```json
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    }
+```
+
+## | DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
+
+### Request
+
+Na requisição DELETE por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
+
+**{{baseURL}}/api/localizacao/1**
+
+### Response 
+
+O response devolve o Status code 204 e retorna 1 indicando sucesso da deleção.
+                                                                                    
 ---
 
 Teste com Postman
