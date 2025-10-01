@@ -115,7 +115,7 @@ Endpoints REST
 
 Teste com Postman
 
-- Uma collection pronta está disponível em: `PetAPI-Collection-Completa.postman_collection.json`
+- Uma collection Postman está disponível nos arquivos do projeto.
 - Importar no Postman > Import > Upload File
 
 
